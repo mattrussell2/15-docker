@@ -1,4 +1,4 @@
 {
-    "build": { "dockerfile": "./Dockerfile" },
+    "image": "ubuntu:18.04",
     "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format"]
 }

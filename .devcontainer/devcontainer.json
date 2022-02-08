@@ -1,4 +1,4 @@
 {
-    "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-12",
+    "build": {"dockerfile": "Dockerfile" },
     "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format"]
 }

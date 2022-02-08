@@ -1,4 +1,4 @@
 {
-    "image": "ubuntu:18.04",
+    "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-12",
     "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format"]
 }

@@ -1,4 +1,4 @@
 {
-    "build": { "dockerfile": "Docker" },
+    "build": { "dockerfile": "Dockerfile" },
     "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format"]
 }

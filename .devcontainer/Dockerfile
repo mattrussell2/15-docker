@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update -y && apt-get upgrade -y && \
     apt-get install build-essential      -y && \
+    chmod +x /workspaces/cs-15/.devcontainer/install_clang && \
     bash /workspaces/cs-15/.devcontainer/install_clang 8 && \
     apt-get install clang-format         -y && \
     apt-get install valgrind             -y && \

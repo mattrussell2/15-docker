@@ -1,4 +1,4 @@
 {
     "build": {"dockerfile": "Dockerfile" },
-    "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format"]
+    "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format", "liximomo.sftp"]
 }

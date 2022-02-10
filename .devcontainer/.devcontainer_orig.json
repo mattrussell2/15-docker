@@ -1,0 +1,9 @@
+{
+    "name": "cs-15",
+    "build": {"dockerfile": "Dockerfile", 
+              "args": {"utln": "YOUR_UTLN_HERE" }
+             },
+    "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format", "liximomo.sftp"],    
+    "runArgs": ["--privileged"],    
+    "remoteUser": "YOUR_UTLN_HERE"
+}

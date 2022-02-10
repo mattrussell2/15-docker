@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Please enter your utln for homework.cs.tufts.edu"
+read utln
+echo "You wrote ${some_var}"
+echo "success! if you entered the wrong info, please run this script again"
+
+sed -i 's/YOUR_UTLN_HERE/${utln}/g' devcontainer.json

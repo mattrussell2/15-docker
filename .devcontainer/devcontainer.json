@@ -1,7 +1,7 @@
 {
     "name": "cs-15",
-    "build": {"dockerfile": "Dockerfile", 
-              "args":{"FLDR":"${localWorkspaceFolder}"} },
+    "build": {"dockerfile": "Dockerfile" },
     "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format", "liximomo.sftp"],
-    "runArgs": ["--privileged"]
+    "runArgs": ["--privileged"],
 }
+

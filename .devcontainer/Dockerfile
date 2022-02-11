@@ -17,5 +17,4 @@ RUN ln -s /usr/bin/clang-format-10 /usr/bin/clang-format
 RUN apt-get install ssh -y
 RUN adduser --disabled-password --gecos "" ${utln} 
 RUN usermod -aG sudo ${utln}
-#RUN mkdir /home/${utln}/.ssh
-#RUN ssh-keygen -b 2048 -t rsa -f /home/${utln}/.ssh/id_rsa -q -N "" 
+RUN echo -e "\nexport PS1=\"\\u@cs-15-local:\\W\\$ \"" >> /home/${utln}/.bashrc

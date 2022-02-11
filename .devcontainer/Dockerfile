@@ -6,7 +6,7 @@ COPY . build
 
 RUN apt-get update -y && apt-get upgrade              -y
 RUN apt-get install lsb-release build-essential wget  -y
-RUN apt-get install software-properties-common        -y
+RUN apt-get install software-properties-common git    -y
 RUN apt-get install clang-format-10 valgrind ssh sudo -y 
 
 RUN chmod +x ./build/install_clang

@@ -19,5 +19,3 @@ RUN adduser --disabled-password --gecos "" ${utln}
 RUN usermod -aG sudo ${utln}
 
 RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"" >> /home/${utln}/.bashrc
-
-RUN mkdir -p ${rootdir}/.vscode/

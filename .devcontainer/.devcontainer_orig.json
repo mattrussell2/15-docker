@@ -3,8 +3,7 @@
     "build": {"dockerfile": "Dockerfile", 
               "args": { "utln": "YOUR_UTLN_HERE" }
              },
-    "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format", "liximomo.sftp"],    
-    "runArgs": ["--privileged"],    
+    "extensions": ["autumnmoon.cpp-unit-test", "xaver.clang-format", "liximomo.sftp"],        
     "remoteUser": "YOUR_UTLN_HERE",
     "settings": {
         "clang-format.executable": "clang-format",

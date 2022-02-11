@@ -3,7 +3,7 @@
 correct="n"
 
 cp .devcontainer_orig.json devcontainer.json
-cp -r .vscode_original .vscode
+cp -r .vscode_original ../.vscode
 
 while [[ ${correct} != "y" ]]; do    
     echo "Please enter your utln for homework.cs.tufts.edu"
@@ -23,5 +23,4 @@ while [[ ${correct} != "y" ]]; do
 done
 
 sed -i "s/YOUR_UTLN_HERE/$utln/g" devcontainer.json
-sed -i "s/YOUR_UTLN_HERE/$ultn/g" .vscode/sftp.json
-cp -r .vscode ../
+sed -i "s/YOUR_UTLN_HERE/$utln/g" ../.vscode/sftp.json

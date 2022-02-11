@@ -17,4 +17,4 @@ RUN ln -s /usr/bin/clang-format-10 /usr/bin/clang-format
 RUN apt-get install ssh -y
 RUN adduser --disabled-password --gecos "" ${utln} 
 RUN usermod -aG sudo ${utln}
-RUN echo -e "\nexport PS1=\"\\u@cs-15-local:\\W\\$ \"" >> /home/${utln}/.bashrc
+RUN echo -e "\nexport PS1=\"\\u@tufts-local:\\W\\$ \"" >> /home/${utln}/.bashrc

@@ -4,11 +4,13 @@ ARG utln
 
 COPY . build
 
-RUN apt-get update -y && apt-get upgrade              -y
-RUN apt-get install lsb-release build-essential wget  -y
-RUN apt-get install software-properties-common git    -y
-RUN apt-get install clang-format valgrind ssh sudo    -y 
-RUN apt-get install time clang-12 python3-pip         -y
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+            lsb-release build-essential software-properties-common \
+            wget git ssh sudo time \                                        
+            clang-12 clang-format valgrind \
+            python3-pip
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
@@ -21,8 +23,9 @@ RUN adduser --disabled-password --gecos "" ${utln}
 RUN usermod -aG sudo ${utln}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"" >> /home/${utln}/.bashrc
-RUN printf "export utln=${utln}" >> /home/${utln}/.bashrc
+RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
+RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
+RUN printf "export PATH:\${PATH}:/workspaces/${utln}\n" >> /home/$utln/.bashrc
 
 # clone the course repository
 #ARG REPO_REMOTE_PATH

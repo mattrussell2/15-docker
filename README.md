@@ -63,7 +63,17 @@ register-utln
 This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will allow for automated backups.
 
 ## Automatic Backups
-Also, once the above step is completed, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory.
+Once you have completed the `register-utln` command, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. To verify that backups are working:
+
+0. Open the development container.
+1. Create a file and make some minor edits to it.
+2. Save the file - the automatic backup only happens when you save!
+3. Open a terminal from within your development container.
+4. Run `ssh utln@homework.cs.tufts.edu`, where you replace `utln` with your utln. 
+5. Be amazed at no password access!
+6. run `cd cs-15`
+7. run `ls`
+8. You should see the file you just created.
 
 ## Workflow
 Okay! For the future, anytime you want to work on `cs-15` stuff:
@@ -71,12 +81,14 @@ Okay! For the future, anytime you want to work on `cs-15` stuff:
 2. Press `ctrl/cmd + shift + p` 
 3. Select `Remote-containers: Open Folder in Container`
 4. Select the `cs-15` directory. 
-5. Open a terminal with the `+` key. 
-6. Do your work!
+5. Open a terminal and work! 
 
-### After opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above. 
+Note that after opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above. 
 
-# pull-code
+# scripts
+We written some scripts for you to be able to interface with the course files. These are all available from within the container after you've installed it. 
+
+## pull-code
 The `pull-code` script is used to pull starter code for an assignment from the homework server to your local system. 
 ## 
 ```
@@ -88,5 +100,35 @@ pull-code hw1
 ``` 
 Will download the homework 1 starter code files. If you've already been working on a homework, make sure to make a local backup before running this command!
 
-# jumbotest
+## jumbotest
 This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest
+
+
+## pull-backup
+pull-backup will pull a backup of your code from the homework server. If something goes wrong on your local system and you lose some/all files for an assignment:
+
+1. Open your development container. 
+2. ssh to the homework server (step 4 above) and navigate to your files. 
+3. Open the files and verify that they have the correct contents. You'll likely want to use `nano`, `emacs`, or `vim` for this. Look up how to quickly use these editors. You can also use the unix `cat`, `more`, or `less` commands to quickly peek at the files. 
+4. Once you've verified that the files are what you want, exit from the homework server. 
+5. Run the command `pull-backup hwname`. 
+
+### .snapshot
+One of the nice features of the halligan server is the `.snapshot` directory. This directory contains 'snapshots' of all your work at various points in time. To see it:
+
+1. ssh to the homework server
+2. run `ls .snapshot`
+
+If you run `ls` on any of the directories within `.snapshot`, you will see a 'frozen snapshot' of your halligan work from that point in time. If you need to ever backup work from the `.snapshot` directory:
+
+0. load into the dev container
+1. ssh to the homework server, and find which files you want in `.snapshot`. 
+2. copy the name of the `.snapshot` directory (e.g. `daily.2022-07-03_0010`)
+3. exit from the homework server. 
+4. run `pull-backup hwname -s snapshot_directory`
+
+So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` directory, then you'd run: 
+```
+pull-backup hw1 -s daily.2022-07-03_0010
+```
+The relevant files will be copied to your local system. If you still have local `hw1` files you want to keep, make sure to rename your local `hw1` folder to something else before pulling the backup files. 

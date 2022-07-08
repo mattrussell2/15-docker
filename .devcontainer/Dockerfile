@@ -8,7 +8,7 @@ RUN apt-get update -y && apt-get upgrade              -y
 RUN apt-get install lsb-release build-essential wget  -y
 RUN apt-get install software-properties-common git    -y
 RUN apt-get install clang-format valgrind ssh sudo    -y 
-RUN apt-get install time clang-12                     -y
+RUN apt-get install time clang-12 python3-pip         -y
 
 # install python packages
 RUN python3 -m pip install --upgrade pip

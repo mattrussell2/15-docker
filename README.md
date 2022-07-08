@@ -41,8 +41,7 @@ Enter your eecs `utln` when prompted.
 ## Build the container
 Great! Now, we have the blueprint for the container, but we need to build it. In `VSCode`, 
 
-*  [On Windows] press `ctrl + shift + p` 
-*  [On Mac]     press `cmd + shift + p`
+*  Press `CTRL/CMD+ SHIFT + p` [CTRL on windows, CMD on mac] 
 *  Search for `Remote-containers: Open Folder in Container`
 *  Select the `cs-15` directory from the steps above
 *  The window should refresh - and the docker container will be built. 
@@ -60,25 +59,31 @@ Run the command
 ```
 register-utln
 ```
-This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will allow for automated backups.
+This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will enable automated backups of your work.
 
 ## Automatic Backups
-Once you have completed the `register-utln` command, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. To verify that backups are working:
+From within the development container in `VSCode`:
 
-0. Open the development container.
+0. `cd /workspaces/cs-15`
+1. Press `CTRL/CMD + SHIFT + p`
+2. Search for and select `SFTP: config`
+
+You only need to do this once. Now, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. 
+
+To verify that backups are working:
+
 1. Create a file and make some minor edits to it.
 2. Save the file - the automatic backup only happens when you save!
 3. Open a terminal from within your development container.
 4. Run `ssh utln@homework.cs.tufts.edu`, where you replace `utln` with your utln. 
-5. Be amazed at no password access!
-6. run `cd cs-15`
-7. run `ls`
-8. You should see the file you just created.
+5. run `cd cs-15`
+6. run `ls`
+7. You should see the file you just created.
 
 ## Workflow
 Okay! For the future, anytime you want to work on `cs-15` stuff:
 1. Open `VSCode`
-2. Press `ctrl/cmd + shift + p` 
+2. Press `CTRL/CMD + SHIFT + p` 
 3. Select `Remote-containers: Open Folder in Container`
 4. Select the `cs-15` directory. 
 5. Open a terminal and work! 
@@ -105,11 +110,11 @@ This command is to use our in-house unit testing framework. See here for details
 
 
 ## pull-backup
-pull-backup will pull a backup of your code from the homework server. If something goes wrong on your local system and you lose some/all files for an assignment:
+pull-backup will pull a backup of your code from the homework server. If something goes wrong on your local system and you lose your files for an assignment:
 
 1. Open your development container. 
 2. ssh to the homework server (step 4 above) and navigate to your files. 
-3. Open the files and verify that they have the correct contents. You'll likely want to use `nano`, `emacs`, or `vim` for this. Look up how to quickly use these editors. You can also use the unix `cat`, `more`, or `less` commands to quickly peek at the files. 
+3. Open the files and verify that they have the correct contents. You can use the unix `cat`, `more`, or `less` commands to quickly peek at the files - or you can use `nano`, `emacs`, or `vim` for this - google how these are used.
 4. Once you've verified that the files are what you want, exit from the homework server. 
 5. Run the command `pull-backup hwname`. 
 

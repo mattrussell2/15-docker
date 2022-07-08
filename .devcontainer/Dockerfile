@@ -22,6 +22,7 @@ RUN usermod -aG sudo ${utln}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"" >> /home/${utln}/.bashrc
+RUN printf "export utln=${utln}" >> /home/${utln}/.bashrc
 
 # clone the course repository
 #ARG REPO_REMOTE_PATH

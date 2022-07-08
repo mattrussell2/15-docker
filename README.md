@@ -136,4 +136,4 @@ So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` dir
 ```
 pull-backup hw1 -s daily.2022-07-03_0010
 ```
-The relevant files will be copied to your local system. If you still have local `hw1` files you want to keep, make sure to rename your local `hw1` folder to something else before pulling the backup files. 
+The relevant files will be copied to your local system. Note that the directory created is `hw1_backup`, or in the case of the snapshot backup above, `hw1_backup_daily.2022-07-03_0010`

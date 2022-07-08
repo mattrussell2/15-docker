@@ -32,7 +32,7 @@ git clone https://www.github.com/mattrussell2/15-docker.git cs-15
 
 This will clone the repository (download all of the files required to build the container). Now, in your terminal, run:
 ```
-cd .devcontainer
+cd .devcontainer # (NOTE: it's .devcontainer, not devcontainer)
 chmod +x prep_install
 ./prep_install
 ```

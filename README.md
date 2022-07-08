@@ -1,4 +1,3 @@
- 
 # Introduction
 The course setup for `cs-15` will be as follows:
 1. You will be working on the `VSCode` development environment.
@@ -12,7 +11,7 @@ of what are known as `containers`. `Docker containers` are effectively mini-oper
 containers are commonly used for packaging applications with all the stuff they need to run. Rather than have to build a different version of a given piece of software on multiple systems, using `Docker containers`, you can make one build of your software, and then run it anywhere the containers are supported.
 
 ### Remote Containers
-`VS Code` has an extension named `remote containers`; this allows you to work 'inside' of a `Docker container` that is on your local desktop. This means that you can have access to a whole other operating system which comes pre-packaged with all of the necessary software for the course 
+`VSCode` has an extension named `remote containers`; this allows you to work 'inside' of a Docker container that is on your local desktop. This means that you can have access to a whole other operating system which comes pre-packaged with all of the necessary software for the course 
 
 
 # Install Prerequisites
@@ -54,7 +53,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 * Feel free to press the button to view the logs and see what's happening - this step will take about 5-10m. It will only have to happen once. After the container is built, it'll be quick to load.
 * In rare cases, your system might hang at the very beginning (on step 2 or 3). If it's doing this, then run the command `rm ~/.docker/config.json` to remove the docker config file, and start over.      
 
-Once the installation is complete, you should see `Dev Container: cs-15` in the lower left corner of the `VS Code` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
+Once the installation is complete, you should see `Dev Container: cs-15` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
 
 ## register-utln
 Run the command
@@ -68,7 +67,7 @@ Also, once the above step is completed, every time that you save a file in your 
 
 ## Workflow
 Okay! For the future, anytime you want to work on `cs-15` stuff:
-1. Open `VS Code`
+1. Open `VSCode`
 2. Press `ctrl/cmd + shift + p` 
 3. Select `Remote-containers: Open Folder in Container`
 4. Select the `cs-15` directory. 

@@ -1,5 +1,0 @@
-#!/bin/bash 
-
-echo "creating backup on halligan server at path /h/${utln}/cs-15/$1"
-
-scp -r "$1" "${utln}@homework.cs.tufts.edu:~/MYTEST/"

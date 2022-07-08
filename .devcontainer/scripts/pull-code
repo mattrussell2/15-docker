@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+scp -r "${utln}@homework.cs.tufts.edu:/comp/15/files/$1" "."

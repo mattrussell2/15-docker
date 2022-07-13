@@ -11,7 +11,7 @@ of what are known as `containers`. `Docker containers` are effectively mini-oper
 containers are commonly used for packaging applications with all the stuff they need to run. Rather than have to build a different version of a given piece of software on multiple systems, using `Docker containers`, you can make one build of your software, and then run it anywhere the containers are supported.
 
 ### Remote Containers
-`VSCode` has an extension named `remote containers`; this allows you to work 'inside' of a Docker container that is on your local desktop. This means that you can have access to a whole other operating system which comes pre-packaged with all of the necessary software for the course 
+`VSCode` has an extension named `remote containers`; this allows you to work 'inside' of a Docker container that is on your local desktop. This means that you can have access to a whole other operating system which comes pre-packaged with software. In our case, this means that you can have access to an `Ubuntu` environment with any and all software that's necessary for the course.
 
 
 # Install Prerequisites
@@ -119,12 +119,12 @@ pull-backup will pull a backup of your code from the homework server. If somethi
 5. Run the command `pull-backup hwname`. 
 
 ### .snapshot
-One of the nice features of the halligan server is the `.snapshot` directory. This directory contains 'snapshots' of all your work at various points in time. To see it:
+One of the nice features of the halligan server is the `.snapshot` directory. This directory contains 'snapshots' of all your work at various points in time. To see it
 
 1. ssh to the homework server
 2. run `ls .snapshot`
 
-If you run `ls` on any of the directories within `.snapshot`, you will see a 'frozen snapshot' of your halligan work from that point in time. If you need to ever backup work from the `.snapshot` directory:
+If you run `ls` on any of the directories within `.snapshot`, you will see a 'frozen snapshot' of your halligan work from that point in time. If you need to ever backup work from the `.snapshot` directory
 
 0. load into the dev container
 1. ssh to the homework server, and find which files you want in `.snapshot`. 
@@ -132,7 +132,7 @@ If you run `ls` on any of the directories within `.snapshot`, you will see a 'fr
 3. exit from the homework server. 
 4. run `pull-backup hwname -s snapshot_directory`
 
-So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` directory, then you'd run: 
+So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` directory, then you'd run
 ```
 pull-backup hw1 -s daily.2022-07-03_0010
 ```

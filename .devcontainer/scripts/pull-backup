@@ -22,11 +22,11 @@ then
     if [ "$2" != "-s" ]; then
         echo -e "Usage: pull-backup hwname [-s snapshot_directory]"
     else 
-        mkdir "./$1_backup_$3"
-        scp -r "${utln}@homework.cs.tufts.edu:~/.snapshot/$3/cs-15/$1/*" "./$1_backup_$3/"
+        mkdir "./$1-backup-$3"
+        scp -r "${utln}@homework.cs.tufts.edu:~/.snapshot/$3/cs-15/$1/*" "./$1-backup-$3/"
     fi
 else
-    mkdir "./$1_backup"
-    scp -r "${utln}@homework.cs.tufts.edu:~/cs-15/$1/*" "./$1_backup/"
+    mkdir "./$1-backup"
+    scp -r "${utln}@homework.cs.tufts.edu:~/cs-15/$1/*" "./$1-backup/"
 fi
 

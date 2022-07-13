@@ -100,7 +100,7 @@ We have written some scripts for you to be able to interface with the course fil
 The `pull-code` script is used to pull starter code for an assignment from the homework server to your local system. 
 ## 
 ```
-pull-code ASSIGNMNET_NAME
+pull-code ASSIGNMENT_NAME
 ```
 This script will pull the starter code for a given lab/homework/project For instance, running 
 ```

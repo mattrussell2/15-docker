@@ -116,7 +116,8 @@ pull-backup will pull a backup of your code from the homework server. If somethi
 2. ssh to the homework server (step 4 above) and navigate to your files. 
 3. Open the files and verify that they have the correct contents. You can use the unix `cat`, `more`, or `less` commands to quickly peek at the files - or you can use `nano`, `emacs`, or `vim` for this - google how these are used.
 4. Once you've verified that the files are what you want, exit from the homework server. 
-5. Run the command `pull-backup hwname`. 
+5. Run the command `pull-backup hwname`.
+6. The files will be downloaded into a folder named `hwname-backup`. 
 
 ### .snapshot
 One of the nice features of the halligan server is the `.snapshot` directory. This directory contains 'snapshots' of all your work at various points in time. To see it
@@ -131,9 +132,10 @@ If you run `ls` on any of the directories within `.snapshot`, you will see a 'fr
 2. copy the name of the `.snapshot` directory (e.g. `daily.2022-07-03_0010`)
 3. exit from the homework server. 
 4. run `pull-backup hwname -s snapshot_directory`
+5. the files will be downloaded into a folder named `hwname-backup-snapshot_dir_name`
 
-So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` directory, then you'd run
+For example if you wanted the hw1 files from the `~/.snapshot/daily.2022-07-03_0010` directory on the hw server, then you'd run
 ```
 pull-backup hw1 -s daily.2022-07-03_0010
 ```
-The relevant files will be copied to your local system. Note that the directory created is `hw1_backup`, or in the case of the snapshot backup above, `hw1_backup_daily.2022-07-03_0010`
+The relevant homework files from that .snapshot will be copied to your local system in a folder named `hw1-backup-daily.2022-07-03_0010`.

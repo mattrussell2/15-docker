@@ -25,7 +25,7 @@ RUN usermod -aG sudo ${utln}
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
 RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
-RUN printf "export PATH=\${PATH}:/workspaces/15-docker/.devcontainer/scripts\n" >> /home/$utln/.bashrc
+RUN printf "export PATH=\${PATH}:/workspaces/cs-15/.devcontainer/scripts\n" >> /home/$utln/.bashrc
 
 # clone the course repository
 #ARG REPO_REMOTE_PATH

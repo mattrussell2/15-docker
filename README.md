@@ -104,9 +104,6 @@ pull-code lab0
 ``` 
 Will download the lab0 starter code files and place them in a folder named `lab0`. If you've already been working on a homework, make sure to make a local backup before running this command!
 
-## jumbotest
-This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest
-
 ## pull-backup
 pull-backup will pull the most recent backup of your code that's on the halligan homework server for an assignment, and will place the files in a folder named `hwname-backup`. So, if something goes wrong on your local system and you lose your files for an assignment:
 
@@ -135,3 +132,6 @@ So, if for example you wanted the hw1 files from the `daily.2022-07-03_0010` dir
 pull-backup hw1 -s daily.2022-07-03_0010
 ```
 The relevant files will be copied to your local system. Note that the directory created is `hw1_backup`, or in the case of the snapshot backup above, `hw1_backup_daily.2022-07-03_0010`
+
+## jumbotest
+This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest

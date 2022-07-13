@@ -1,9 +1,9 @@
 #!/bin/bash 
-echo -e "\nAbout to copy backed up code for assignment $1\n"
+echo -e "\nAbout to copy backed-up code for assignment $1\n"
 
-if [ -d "$1" ];
+if [ -d "$1-backup" ];
 then
-	echo "$1 folder already exists on your local system."
+	echo "$1-backup folder already exists on your local system."
     echo "Are you sure you want to overwrite your local files? (y/n) "
     read yn
     while [[ "$yn" != "y" && "$yn" != "n" ]]; 
@@ -22,6 +22,23 @@ then
     if [ "$2" != "-s" ]; then
         echo -e "Usage: pull-backup hwname [-s snapshot_directory]"
     else 
+                
+        if [ -d "$1-backup-$3" ];
+        then
+            echo "$1-backup-$3 folder already exists on your local system."
+            echo "Are you sure you want to overwrite your local files? (y/n) "
+            read yn
+            while [[ "$yn" != "y" && "$yn" != "n" ]]; 
+            do
+                echo -e "Enter one of (y/n): "
+                read yn
+            done
+            if [ "$yn" == "n" ]; then
+                echo "Quitting..."
+                exit 1
+            fi 
+        fi
+
         mkdir "./$1-backup-$3"
         scp -r "${utln}@homework.cs.tufts.edu:~/.snapshot/$3/cs-15/$1/*" "./$1-backup-$3/"
     fi

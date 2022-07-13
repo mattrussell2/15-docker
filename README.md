@@ -4,7 +4,7 @@ The course setup for `cs-15` will be as follows:
 2. You will be using the `remote-containers` extension in `VSCode`. 
 3. You will be using a provided `Docker` container with course files, scripts, etc. so you can easily access and work with the starter code, compile, run, and run `valgrind` on your local system, etc. 
    
-## Background (optional)
+## Background
 ### Docker
 `Docker` is a tool which allows for the creation/maintenance
 of what are known as `containers`. `Docker containers` are effectively mini-operating systems that can come pre-packaged with software, etc. Such

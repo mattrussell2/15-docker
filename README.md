@@ -24,13 +24,13 @@ For Windows users, WSL2 is encouraged, however is not required. See the details 
 
 # Installing the Docker Container
 ## Download the Build Scripts
-Open a terminal in VSCode, and navigate to where you would like to make a cs-15 folder for your course work this semester. Then, run the following command in the integrated terminal:
+Open a terminal in VSCode, and navigate to where you would like to make a `cs-15` folder for your coursework this semester. Then, run the following command in the integrated terminal:
 
 ```
 git clone https://www.github.com/mattrussell2/15-docker.git cs-15
 ````
 
-This will clone the repository (download all of the files required to build the container). Now, in your terminal, run:
+This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-15`. Now, in your terminal, run:
 ```
 cd cs-15/.devcontainer # (NOTE: it's .devcontainer, not devcontainer)
 chmod +x prep_install

@@ -20,17 +20,16 @@ containers are commonly used for packaging applications with all the stuff they 
 4. [Install the remote containers extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ## Note for Windows Users
-For Windows users, WSL2 is encouraged, however is not required. See the details here on installation as it relates to remote-containers. https://code.visualstudio.com/docs/remote/containers. [Link for WSL2 installation walkthrough](https://docs.microsoft.com/en-us/windows/wsl/install)
+For Windows users, WSL2 is encouraged, however is not required. See the details here on installation as it relates to remote-containers. https://code.visualstudio.com/docs/remote/containers. [Link for WSL2 installation walkthrough](https://docs.microsoft.com/en-us/windows/wsl/install). If you do **not** use WSL2, make sure to right-click on the Docker task bar item, select `Settings` and update `Resources > File Sharing` with any locations your source code is kept. See [tips and tricks for troubleshooting here](https://code.visualstudio.com/docs/remote/troubleshooting#_container-tips).
 
 # Installing the Docker Container
 ## Download the Build Scripts
-Open a terminal in VSCode, and navigate to where you would like to make a `cs-15` folder for your coursework this semester. Then, run the following command in the integrated terminal:
-
+Open a terminal in VSCode, and navigate to where you would like to make a `cs-15` folder for your coursework this semester. Then, run the following command in the integrated terminal
 ```
 git clone https://www.github.com/mattrussell2/15-docker.git cs-15
 ````
 
-This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-15`. Now, in your terminal, run:
+This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-15`. Now, in your terminal, run
 ```
 cd cs-15/.devcontainer # (NOTE: it's .devcontainer, not devcontainer)
 chmod +x prep_install
@@ -39,7 +38,7 @@ chmod +x prep_install
 Enter your eecs `utln` when prompted. 
 
 ## Build the container
-Great! Now, we have the blueprint for the container, but we need to build it. In `VSCode`, 
+Great! Now, we have the blueprint for the container, but we need to build it. In `VSCode`
 
 *  Press `CTRL/CMD+ SHIFT + p` [CTRL on windows, CMD on mac] 
 *  Search for `Remote-containers: Open Folder in Container`
@@ -48,7 +47,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 
 ## Notes
 * If you see an error related to the `Docker daemon`, make sure you have `Docker` running in the background. 
-* Be sure to indicate that you trust the author of the container. 
+* Be sure to indicate that you trust the author of the container if prompted. 
 * Feel free to press the button to view the logs and see what's happening - this step will take about 5-10m. It will only have to happen once. After the container is built, it'll be quick to load.
 * In rare cases, your system might hang at the very beginning (on step 2 or 3). If it's doing this, then run the command `rm ~/.docker/config.json` to remove the docker config file, and start over.      
 
@@ -59,7 +58,7 @@ Run the command
 ```
 register-utln
 ```
-This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will enable automated backups of your work. To verify that your ssh key is registered, you can run `ssh utln@homework.cs.tufts.edu` after the command finishes. It should connect you to the halligan homework server without any prompting for a password. If you have ssh'd, run `exit` to quit from the homework server.
+This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will be used to enable automated backups of your work. To verify that your ssh key is registered, you can run `ssh utln@homework.cs.tufts.edu` after the command finishes. It should connect you to the halligan homework server without any prompting for a password. If you have ssh'd, run `exit` to quit from the homework server.
 
 ## Automatic Backups
 Excellent! Now, from within the development container in `VSCode`:
@@ -88,6 +87,11 @@ Okay! For the future, anytime you want to work on `cs-15` stuff:
 5. Open a terminal and work! 
 
 Pro tip: Sometimes `VSCode` will open automatically to your container if it's the last place you were working. If not, after opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above.
+
+### Notes on the development environment
+* When loading into the container in the way described above, you have direct access to the folders/files that live within the `cs-15` folder on your hard drive. So if you create/edit files in the `cs-15` directory in your dev container, then you'll be able to see the updated files in your the folder browser of your operating system 'as normal'. Likewise, if you remove files from the folder browser, the'll disappear from your dev container as well. **From within the container you will not be able to browse through any files on your machine outside of the `cs-15` directory.** The container is meant only for `cs-15` stuff. This is done through what's called a 'bind mount' - if you want more detail (optional), check out [this link](https://docs.docker.com/storage/bind-mounts/). 
+* You have `sudo` access in this terminal (no password required). If you need to install any software, etc., run `sudo apt install xxxxxx`. Also, if you'd like to install `VSCode` extensions within the container, feel free to do so!
+* If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-15`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-15`.
 
 # scripts
 We have written some scripts for you to be able to interface with the course files. These are all available from within the container after you've installed it. 

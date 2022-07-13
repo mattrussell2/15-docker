@@ -59,26 +59,25 @@ Run the command
 ```
 register-utln
 ```
-This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will enable automated backups of your work.
+This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will enable automated backups of your work. To verify that your ssh key is registered, you can run `ssh utln@homework.cs.tufts.edu` after the command finishes. It should connect you to the halligan homework server without any prompting for a password. If you have ssh'd, run `exit` to quit from the homework server.
 
 ## Automatic Backups
-From within the development container in `VSCode`:
+Excellent! Now, from within the development container in `VSCode`:
 
-0. `cd /workspaces/cs-15`
 1. Press `CTRL/CMD + SHIFT + p`
 2. Search for and select `SFTP: config`
 
-You only need to do this once. Now, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. 
+You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file). You only need to do this once. Now, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. 
 
 To verify that backups are working:
 
 1. Create a file and make some minor edits to it.
 2. Save the file - the automatic backup only happens when you save!
-3. Open a terminal from within your development container.
-4. Run `ssh utln@homework.cs.tufts.edu`, where you replace `utln` with your utln. 
-5. run `cd cs-15`
-6. run `ls`
-7. You should see the file you just created.
+3. Run `ssh utln@homework.cs.tufts.edu`, where you replace `utln` with your utln. 
+4. run `cd cs-15`
+5. run `ls`
+6. You should see the file you just created.
+7. run `exit` to quit from the homework server.
 
 ## Workflow
 Okay! For the future, anytime you want to work on `cs-15` stuff:
@@ -88,33 +87,32 @@ Okay! For the future, anytime you want to work on `cs-15` stuff:
 4. Select the `cs-15` directory. 
 5. Open a terminal and work! 
 
-Note that after opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above. 
+Pro tip: Sometimes `VSCode` will open automatically to your container if it's the last place you were working. If not, after opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above.
 
 # scripts
-We written some scripts for you to be able to interface with the course files. These are all available from within the container after you've installed it. 
+We have written some scripts for you to be able to interface with the course files. These are all available from within the container after you've installed it. 
 
 ## pull-code
 The `pull-code` script is used to pull starter code for an assignment from the homework server to your local system. 
 ## 
 ```
-pull-code HWNAME
+pull-code ASSIGNMNET_NAME
 ```
-This script will pull the starter code for a given homework. For instance, running 
+This script will pull the starter code for a given lab/homework/project For instance, running 
 ```
-pull-code hw1
+pull-code lab0
 ``` 
-Will download the homework 1 starter code files. If you've already been working on a homework, make sure to make a local backup before running this command!
+Will download the lab0 starter code files and place them in a folder named `lab0`. If you've already been working on a homework, make sure to make a local backup before running this command!
 
 ## jumbotest
 This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest
 
-
 ## pull-backup
-pull-backup will pull a backup of your code from the homework server. If something goes wrong on your local system and you lose your files for an assignment:
+pull-backup will pull the most recent backup of your code that's on the halligan homework server for an assignment, and will place the files in a folder named `hwname-backup`. So, if something goes wrong on your local system and you lose your files for an assignment:
 
 1. Open your development container. 
 2. ssh to the homework server (step 4 above) and navigate to your files. 
-3. Open the files and verify that they have the correct contents. You can use the unix `cat`, `more`, or `less` commands to quickly peek at the files - or you can use `nano`, `emacs`, or `vim` for this - google how these are used.
+3. Open the files and verify that they have the correct contents. You can use the unix `cat`, `more`, or `less` commands to quickly peek at the files - or you can use `nano`, `emacs`, or `vim` to browse the files in more depth - google how these are used.
 4. Once you've verified that the files are what you want, exit from the homework server. 
 5. Run the command `pull-backup hwname`. 
 

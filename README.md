@@ -139,5 +139,5 @@ pull-backup hw1 -s daily.2022-07-03_0010
 ```
 The relevant homework files from that .snapshot will be copied to your local system in a folder named `hw1-backup-daily.2022-07-03_0010`.
 
-## jumbotest
-This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest
+<!-- ## jumbotest
+This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest -->

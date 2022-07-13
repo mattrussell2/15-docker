@@ -26,11 +26,11 @@ then
     if [ "$2" != "-s" ]; then
         echo -e "Usage: pull-backup hwname [-s snapshot_directory]"
     else 
-        test-arg "$1-backup-$3"                
+        check-folder "$1-backup-$3"                
         scp -r "${utln}@homework.cs.tufts.edu:~/.snapshot/$3/cs-15/$1/*" "./$1-backup-$3/"
     fi
 else    
-    test-arg "$1-backup"
+    check-folder "$1-backup"
     scp -r "${utln}@homework.cs.tufts.edu:~/cs-15/$1/*" "./$1-backup/"
 fi
 

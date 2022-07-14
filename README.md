@@ -53,10 +53,10 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 
 Once the installation is complete, you should see `Dev Container: cs-15` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
 
-## register-utln
+## register-ssh-key
 Run the command
 ```
-register-utln
+register-ssh-key
 ```
 This will create an ssh-key for you, so you don't need to enter your password to connect to the halligan server. This will make downloading support code, etc. much easier, and will be used to enable automated backups of your work. To verify that your ssh key is registered, you can run `ssh utln@homework.cs.tufts.edu` after the command finishes. It should connect you to the halligan homework server without any prompting for a password. If you have ssh'd, run `exit` to quit from the homework server.
 

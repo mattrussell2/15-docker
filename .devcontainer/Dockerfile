@@ -10,7 +10,7 @@ RUN apt-get update -y && \
             lsb-release build-essential software-properties-common \
             wget git ssh sudo time \                                        
             clang-12 clang-format valgrind \
-            python3-pip
+            python3-pip jq
 
 # install python packages
 RUN python3 -m pip install --upgrade pip

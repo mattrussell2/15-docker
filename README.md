@@ -63,10 +63,11 @@ This will create an ssh-key for you, so you don't need to enter your password to
 ## Automatic Backups
 Excellent! Now, from within the development container in `VSCode`:
 
+0. Ensure your current working directory is `/workspaces/cs-15`
 1. Press `CTRL/CMD + SHIFT + p`
 2. Search for and select `SFTP: config`
 
-You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file). You only need to do this once. Now, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. 
+You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file), unless you want to change the remote path. Currently, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. If you want your remote code to be stored under `/h/your_utln/coursework/cs-15/`, then update and save the `sftp.json` file as needed. 
 
 To verify that backups are working:
 
@@ -138,6 +139,12 @@ For example if you wanted the hw1 files from the `~/.snapshot/daily.2022-07-03_0
 pull-backup hw1 -s daily.2022-07-03_0010
 ```
 The relevant homework files from that .snapshot will be copied to your local system in a folder named `hw1-backup-daily.2022-07-03_0010`.
+
+
+# Changelog
+## 7-17-2022
+* updated pull-backup to dynamically pull the remote folder from the sftp.json file. 
+* updated readme to reflect the need to be in /workspaces/cs-15 before running config for sftp.
 
 <!-- ## jumbotest
 This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest -->

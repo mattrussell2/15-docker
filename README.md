@@ -95,7 +95,7 @@ Pro tip: Sometimes `VSCode` will open automatically to your container if it's th
 * If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-15`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-15`.
 
 # scripts
-We have written some scripts for you to be able to interface with the course files and your files on the halligan server. These are all available from within the container after you've installed it. Note! You will **not** be able to run these commands from a terminal ssh'd into the homework server, nor will they work from a 'regular' terminal on your local system. **They will only work from within the dev container you've just built.**
+We have written some scripts for you to be able to interface with the course files and your files on the halligan server. These are all available from within the container after you've installed it. Note! You will **not** be able to run these commands from a terminal ssh'd into the homework server, nor will they work from a 'regular' terminal on your local system. **They will only work from a terminal running in the dev container you've just built.**
 
 ## pull-code
 The `pull-code` script is used to pull starter code for an assignment from the homework server to your local system. 

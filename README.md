@@ -107,7 +107,7 @@ This script will pull the starter code for a given lab/homework/project For inst
 ```
 pull-code lab0
 ``` 
-Will download the lab0 starter code files and place them in a folder named `lab0`. If you've already been working on a homework, make sure to make a local backup before running this command!
+Will download the lab0 starter code files and place them in a folder named `lab0`. Warning! This command will overwrite any local files with the same name, so if you've already been working on a lab/hw/project that you're going to download starter code for, make sure to make a local backup before running this command!
 
 ## pull-backup
 pull-backup will pull the most recent backup of your code that's on the halligan homework server for an assignment, and will place the files in a folder named `hwname-backup`. So, if something goes wrong on your local system and you lose your files for an assignment:

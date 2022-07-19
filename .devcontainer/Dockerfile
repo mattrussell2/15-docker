@@ -2,8 +2,6 @@ FROM ubuntu:22.04
 
 ARG utln
 
-#COPY . build
-
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y \
@@ -26,7 +24,3 @@ RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN printf "export PS1=\"\\u@cs-15-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
 RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
 RUN printf "export PATH=\${PATH}:/workspaces/cs-15/.devcontainer/scripts\n" >> /home/$utln/.bashrc
-
-# clone the course repository
-#ARG REPO_REMOTE_PATH
-#RUN cd /autograder/source/ && git clone $REPO_REMOTE_PATH course-repo

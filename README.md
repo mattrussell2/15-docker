@@ -67,7 +67,7 @@ Excellent! Now, from within the development container in `VSCode`:
 1. Press `CTRL/CMD + SHIFT + p`
 2. Search for and select `SFTP: config`
 
-You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file), unless you want to change the remote path. Currently, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...` - where the `...` will be the path to the files under your local system, starting from your local `cs-15` directory. If you want your remote code to be stored under `/h/your_utln/coursework/cs-15/`, then update and save the `sftp.json` file as needed. 
+You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file), unless you want to change the remote path. Currently, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...`.
 
 To verify that backups are working:
 

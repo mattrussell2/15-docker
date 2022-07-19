@@ -1,6 +1,6 @@
 # Introduction
 The course setup for `cs-15` will be as follows:
-1. You will be working on the `VSCode` development environment.
+1. You will be working in the `VSCode` IDE.
 2. You will be using the `remote-containers` extension in `VSCode`. 
 3. You will be using a provided `Docker` container with course files, scripts, etc. so you can easily access and work with the starter code, compile, run, and run `valgrind` on your local system, etc. 
    

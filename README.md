@@ -142,6 +142,9 @@ The relevant homework files from that .snapshot will be copied to your local sys
 
 
 # Changelog
+## 7-19-2022
+* removed `COPY .` from `Dockerfile` - we have a guranatee that the `.devcontainer` folder/files will be loaded within the container. 
+
 ## 7-17-2022
 * updated pull-backup to dynamically pull the remote folder from the sftp.json file. 
 * updated readme to reflect the need to be in /workspaces/cs-15 before running config for sftp.

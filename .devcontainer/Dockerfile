@@ -23,7 +23,7 @@ RUN adduser --disabled-password --gecos "" ${utln}
 RUN usermod -aG sudo ${utln}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN printf "export PS1=\"\\u@tufts-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
+RUN printf "export PS1=\"\\u@cs-15-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
 RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
 RUN printf "export PATH=\${PATH}:/workspaces/cs-15/.devcontainer/scripts\n" >> /home/$utln/.bashrc
 
